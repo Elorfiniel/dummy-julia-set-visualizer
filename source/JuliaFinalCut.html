@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fractal | Julia Set</title>
+        <meta name="description" content="Fractal Art with Julia Set">
+        <meta name="description" content="Put A Little Love In It">
+        <meta name="keywords" content="fractal, art, julia">
+        <meta http-equiv="author" content="Elorfiniel">
+        <meta http-equiv="pragma" content="no-cache">
+        <link rel="stylesheet" href="style/JuliaFinalCut.css" type="text/css">
+    </head><!-- End of Document Head -->
+    <body>
+        <div id="container">
+            <div id="canva">
+                <canvas id="canvas" width="640px" height="640px">Sketch Here!</canvas>
+                <input type="range" name="magnify" id="magnify" min="1" max="24" step="0.1" value="1">
+            </div><!-- End of Main Canvas -->
+            <div id="panel">
+                <div id="header">
+                    <h1>Fractal | Julia Set</h1>
+                </div>
+                <div id="control">
+                    <div id="mainPanel">
+                        <div class="slider_container">
+                            <div class="switch_wrapper">
+                                <input type="checkbox" name="rSwitch" id="rSwitch" checked="checked">
+                                <div class="output_wrapper">
+                                    <output for="real" form="rForm" name="rOutput"></output>
+                                </div>
+                            </div>
+                            <div class="slider_wrapper">
+                                <form action="" id="rForm" oninput="rOutput.value = Number(real.value).toFixed(2)">
+                                    <input type="range" name="real" id="value_R" class="rangeSlider" min="-2" max="2" step="0.01">
+                                </form>
+                            </div>
+                            <div class="switch_ins" id="rIns">
+                                <input type="button" value="Random R" class="switch_botton random" id="randomR">
+                                <input type="button" value="Reset R" class="switch_botton reset" id="resetR">
+                                <span><div class="animate_wrapper" id="animate_wrapper_R">
+                                    <input type="checkbox" name="animateR" id="animateR" class="">
+                                </div></span>
+                            </div>
+                        </div>
+                        <div class="slider_container">
+                            <div class="switch_wrapper">
+                                <input type="checkbox" name="iSwitch" id="iSwitch" checked="checked">
+                                <div class="output_wrapper">
+                                    <output for="imag" form="iForm" name="iOutput"></output>
+                                </div>
+                            </div>
+                            <div class="slider_wrapper">
+                                <form action="" id="iForm" oninput="iOutput.value = Number(imag.value).toFixed(2)">
+                                    <input type="range" name="imag" id="value_I" class="rangeSlider" min="-2" max="2" step="0.01">
+                                </form>
+                            </div>
+                            <div class="switch_ins" id="iIns">
+                                    <input type="button" value="Random I" class="switch_botton random" id="randomI">
+                                    <input type="button" value="Reset I" class="switch_botton reset" id="resetI">
+                                    <span><div class="animate_wrapper" id="animate_wrapper_I">
+                                        <input type="checkbox" name="animateI" id="animateI" class="">
+                                    </div></span>
+                            </div>
+                        </div>
+                        <div class="slider_container">
+                            <div class="switch_wrapper">
+                                <input type="checkbox" name="hSwitch" id="hSwitch" checked="checked">
+                                <div class="output_wrapper">
+                                    <output for="hue" form="hForm" name="hOutput"></output>
+                                </div>
+                            </div>
+                            <div class="slider_wrapper">
+                                <form action="" id="hForm" oninput="hOutput.value = Number(hue.value).toFixed(0)">
+                                    <input type="range" name="hue" id="value_H" class="rangeSlider" min="1" max="360" step="1">
+                                </form>
+                            </div>
+                            <div class="switch_ins" id="hIns">
+                                    <input type="button" value="Random H" class="switch_botton random" id="randomH">
+                                    <input type="button" value="Reset H" class="switch_botton reset" id="resetH">
+                                    <span><div class="animate_wrapper" id="animate_wrapper_H">
+                                        <input type="checkbox" name="animateH" id="animateH" class="">
+                                    </div></span>
+                            </div>
+                        </div>
+                        <div class="slider_container">
+                            <div class="switch_wrapper">
+                                <input type="checkbox" name="sSwitch" id="sSwitch" checked="checked">
+                                <div class="output_wrapper">
+                                    <output for="satur" form="sForm" name="sOutput"></output>
+                                </div>
+                            </div>
+                            <div class="slider_wrapper">
+                                <form action="" id="sForm" oninput="sOutput.value = Number(satur.value).toFixed(0)">
+                                    <input type="range" name="satur" id="value_S" class="rangeSlider" min="1" max="100" step="0.5">
+                                </form>
+                            </div>
+                            <div class="switch_ins" id="sIns">
+                                    <input type="button" value="Random S" class="switch_botton random" id="randomS">
+                                    <input type="button" value="Reset S" class="switch_botton reset" id="resetS">
+                                    <span><div class="animate_wrapper" id="animate_wrapper_S">
+                                        <input type="checkbox" name="animateS" id="animateS" class="">
+                                    </div></span>
+                            </div>
+                        </div>
+                        <div class="slider_container">
+                            <div class="switch_wrapper">
+                                <input type="checkbox" name="lSwitch" id="lSwitch" checked="checked">
+                                <div class="output_wrapper">
+                                    <output for="light" form="lForm" name="lOutput"></output>
+                                </div>
+                            </div>
+                            <div class="slider_wrapper">
+                                <form action="" id="lForm" oninput="lOutput.value = Number(light.value).toFixed(0)">
+                                    <input type="range" name="light" id="value_L" class="rangeSlider" min="1" max="100" step="0.5">
+                                </form>
+                            </div>
+                            <div class="switch_ins" id="lIns">
+                                    <input type="button" value="Random L" class="switch_botton random" id="randomL">
+                                    <input type="button" value="Reset L" class="switch_botton reset" id="resetL">
+                                    <span><div class="animate_wrapper" id="animate_wrapper_L">
+                                        <input type="checkbox" name="animateL" id="animateL" class="">
+                                    </div></span>
+                            </div>
+                        </div>
+                        <div id="animate_container">
+                            <input type="hidden" name="animateOFF" id="animateOFF" value="true">
+                        </div>
+                        <script src="scripts/MainPanelInitial.js"></script>
+                        <script src="scripts/JuliaSetModel.js"></script>
+                    </div><!-- Control over Major Parameters -->
+                </div>
+                <div id="optionPanel">
+                    <div class="manu_container">
+                        <input type="radio" class="startRadio" name="option_manu" id="option_manu1" value="Playground">
+                        <input type="radio" class="midRadio" name="option_manu" id="option_manu2" value="Gallery">
+                        <input type="radio" class="endRadio" name="option_manu" id="option_manu3" value="Information" checked="checked">
+                    </div>
+                    <div class="sub_manu" id="sub_manu1">
+                        <div id="dlPara">
+                            <div class="radio_container">
+                                <span class="option_info" id="format_tag"></span>
+                                <input type="radio" class="startRadio" name="dlformat" id="format1" value="PNG" checked="checked">
+                                <input type="radio" class="midRadio" name="dlformat" id="format2" value="JPG">
+                                <input type="radio" class="endRadio" name="dlformat" id="format3" value="BMP">
+                            </div>
+                            <div class="radio_container">
+                                <span class="option_info" id="defina_tag"></span>
+                                <input type="radio" class="startRadio" name="dldefina" id="defina1" value="PNG" checked="800">
+                                <input type="radio" class="midRadio" name="dldefina" id="defina2" value="1000">
+                                <input type="radio" class="midRadio" name="dldefina" id="defina3" value="1500">
+                                <input type="radio" class="endRadio" name="dldefina" id="defina4" value="1800">
+                            </div>
+                            <div id="dl_botton">
+                                <input type="checkbox" name="wMark_switch" id="wMark_switch" class="" checked=""checked>
+                                <input type="button" value="DOWNLOAD" class="switch_botton" id="dlImage">
+                            </div>
+                            <div class="text_container">
+                                <input type="text" class="textBox" name="watermark" id="watermark" placeholder="Designed by Elorfiniel" pattern="[a-zA-Z\d\s]{1,32}" title="Alphanumerical Characters or Spaces" maxlength="32">
+                            </div>
+                        </div>
+                        <div id="mini_map">
+                            <canvas id="map_canvas" width="192px" height="192px"></canvas>
+                        </div>
+                    </div>
+                    <div class="sub_manu" id="sub_manu2">
+                        <div id="gallery_container">
+                            <div class="gallery_level">
+                                <span id="span_gallery0"><canvas id="gallery0" class="gallery_canvas" width="70px" height="92px"></canvas>
+                                <input type="hidden" name="gallery0" id="gallery_value0" value="[0.27, 0.02, 204, 32, 96]"></span>
+                                <span id="span_gallery1"><canvas id="gallery1" class="gallery_canvas" width="70px" height="92px"></canvas>
+                                <input type="hidden" name="gallery1" id="gallery_value1" value="[-0.70, -0.16, 204, 32, 96]"></span>
+                                <span id="span_gallery2"><canvas id="gallery2" class="gallery_canvas" width="70px" height="92px"></canvas>
+                                <input type="hidden" name="gallery2" id="gallery_value2" value="[-0.82, 0.24, 204, 32, 96]"></span>
+                                <span id="span_gallery3"><canvas id="gallery3" class="gallery_canvas" width="70px" height="92px"></canvas>
+                                <input type="hidden" name="gallery3" id="gallery_value3" value="[-0.29, -0.60, 204, 32, 96]"></span>
+                                <span id="span_gallery4"><canvas id="gallery4" class="gallery_canvas" width="70px" height="92px"></canvas>
+                                <input type="hidden" name="gallery4" id="gallery_value4" value="[0.33, 0.13, 204, 32, 96]"></span>
+                            </div>
+                            <div class="gallery_level">
+                                <span id="span_gallery5"><canvas id="gallery5" class="gallery_canvas" width="70px" height="92px"></canvas>
+                                <input type="hidden" name="gallery5" id="gallery_value5" value="[-0.58, 0.00, 204, 32, 96]"></span>
+                                <span id="span_gallery6"><canvas id="gallery6" class="gallery_canvas" width="70px" height="92px"></canvas>
+                                <input type="hidden" name="gallery6" id="gallery_value6" value="[0.41, -0.11, 204, 32, 96]"></span>
+                                <span id="span_gallery7"><canvas id="gallery7" class="gallery_canvas" width="70px" height="92px"></canvas>
+                                <input type="hidden" name="gallery7" id="gallery_value7" value="[-0.82, 0.17, 204, 32, 96]"></span>
+                                <span id="span_gallery8"><canvas id="gallery8" class="gallery_canvas" width="70px" height="92px"></canvas>
+                                <input type="hidden" name="gallery8" id="gallery_value8" value="[0.26, -0.64, 204, 32, 96]"></span>
+                                <span id="span_gallery9"><canvas id="gallery9" class="gallery_canvas" width="70px" height="92px"></canvas>
+                                <input type="hidden" name="gallery9" id="gallery_value9" value="[-0.13, -0.60, 204, 32, 96]"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub_manu" id="sub_manu3">
+                        <div id="realtime_infor">
+                            <div id="designer"><span class="option_info" id="designer_tag"></span></div>
+                            <div id="data"><span id="julia">J</span></div>
+                        </div>
+                        <div id="copyright">
+                            <div id="intro_container">
+                                <p><span id="intro_title">Welcome</span></p>
+                                <p id="main_intro"><span id="intro_body">Julia set, named after Gaston Julia, is associated
+                                    with points on the complex plane for which Z<sub>n+1</sub> = Z<sub>n</sub><sup>2</sup> + C
+                                    doesn't tend to infinity. Initial value Z<sub>0</sub> is each point on the plane
+                                    while C a complex constant.</span></p>
+                            </div>
+                            <div id="hidden_manual">
+                                <p><span id="manual_title">Keyboard</span></p>
+                                <table id="keyboard">
+                                    <tr>
+                                        <td class="keys">W</td>
+                                        <td class="illu">Up</td>
+                                        <td class="keys">A</td>
+                                        <td class="illu">Left</td>
+                                        <td class="keys">S</td>
+                                        <td class="illu">Down</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="keys">D</td>
+                                        <td class="illu">Right</td>
+                                        <td class="keys">I</td>
+                                        <td class="illu">Z In</td>
+                                        <td class="keys">O</td>
+                                        <td class="illu">Z Out</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="keys">C</td>
+                                        <td class="illu" colspan="2">Reset View</td>
+                                        <td class="keys">NUM</td>
+                                        <td class="illu" colspan="2">Gallery</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="keys">E</td>
+                                        <td class="illu" colspan="5">Randomize All Parameters</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="keys">F</td>
+                                        <td class="illu" colspan="5">Reset All Parameters</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="keys">M</td>
+                                        <td class="illu" colspan="5">Display Complete Image</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="white_space"></div>
+                            <div id="manual_container">
+                                <input type="button" class="switch_botton" id="hot_key" value="Keyboard">
+                                <div id="wiki_container">
+                                    <a href="http://en.wikipedia.org/wiki/Julia_set" target="_blank">More on Julia Set</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="scripts/OptionPanel.js"></script>
+                </div>
+            </div>
+        </div>
+        <div id="hidden_canvas"></div>
+        <script src="scripts/MainFlow.js"></script>
+    </body><!-- End of Document Body -->
+</html>
