@@ -52,7 +52,7 @@ Clone this repository, double click `source/JuliaFinalCut.html`, experience the 
   | ---   | ---------------------------- |
   | C     | Reset viewport               |
   | E     | Randomize all parameters     |
-  | F     | Reset all parameters         |
+  | R     | Reset all parameters         |
   | M     | Display the complete image   |
 
 #### Gallery Image
