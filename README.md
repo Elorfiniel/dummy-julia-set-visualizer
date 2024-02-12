@@ -4,6 +4,8 @@
 
 Welcome to the Julia Set Visualizer, an interactive webpage designed to immerse you in the mesmerizing world of fractals. Named after Gaston Julia, the Julia set is a captivating mathematical concept that comes to life through this web-based visualization, where you can explore the intricate beauty of fractals on the complex plane. This interactive tool empowers you to dynamically shape and mold Julia Sets by manipulating key parameters. Immerse yourself in the artistry of mathematics and unleash your creativity!
 
+![webui](gallery/JuliaSet_WebUI_Preview.png)
+
 ## Features
 
 - 🎨 Adjust Colors: Customize the color palette to your liking.
@@ -60,6 +62,12 @@ Clone this repository, double click `source/JuliaFinalCut.html`, experience the 
   | [NUM] | Render gallery image         |
 
 Embark on a visual journey by adjusting parameters, exploring color variations, and discovering the enchanting world of Julia Sets. Happy exploring!
+
+## Examples
+
+| C = -0.20 + 0.60i | C = -1.31 + 0.50i | C = 0.27 + 0.02i |
+| -------------- | -------------- | -------------- |
+| ![-0.20 + 0.60i](gallery/JuliaSet_(-0.2,0.6)_12_27_16.png) | ![-1.31 + 0.50i](gallery/JuliaSet_(-1.31,0.5)_12_26_00.png) | ![0.27 + 0.02i](gallery/JuliaSet_(0.27,0.02)_12_24_15.png) |
 
 ## Tech Stack
 
